@@ -1,5 +1,7 @@
 # facebook-feed-deleter
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/wilf312/facebook-feed-deleter.svg)](https://greenkeeper.io/)
+
 > A Vue.js project
 
 ## Build Setup
