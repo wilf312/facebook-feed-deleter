@@ -1,10 +1,14 @@
+// TODO delete
+import dummy from './dummy'
+
 const initialState = {
   authResponse: {
     accessToken: '',
     expiresIn: 0,
     signedRequest: '',
     userID: ''
-  }
+  },
+  feed: []
 }
 export default {
   namespaced: true,
@@ -31,6 +35,13 @@ export default {
       console.log('logout...')
       FB.logout()
       commit('reset')
+    },
+    getFeed ({commit}) {
+      FB.api('/me/feed', (response) => {
+        console.log(response)
+
+        commit('setFeed', dummy.data)
+      })
     }
   },
   mutations: {
@@ -42,6 +53,9 @@ export default {
     },
     reset (state) {
       state.authResponse = {...initialState.authResponse}
+    },
+    setFeed (state, feed) {
+      state.feed = feed || []
     }
   }
 }

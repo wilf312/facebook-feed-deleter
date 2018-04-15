@@ -8,6 +8,8 @@ import {
   Vuetify,
   VApp,
   VNavigationDrawer,
+  VDataTable,
+  VCheckbox,
   VFooter,
   VList,
   VBtn,
@@ -22,6 +24,8 @@ Vue.use(Vuetify, {
   components: {
     VApp,
     VNavigationDrawer,
+    VDataTable,
+    VCheckbox,
     VFooter,
     VList,
     VBtn,
