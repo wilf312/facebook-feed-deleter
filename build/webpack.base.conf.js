@@ -27,6 +27,9 @@ module.exports = {
       '@': resolve('src')
     }
   },
+  externals: {
+    FB: "var FB"
+  },
   module: {
     rules: [
       {
