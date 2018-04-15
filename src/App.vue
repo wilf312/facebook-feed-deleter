@@ -4,8 +4,10 @@
       <v-toolbar-title v-text="title"></v-toolbar-title>
     </v-toolbar>
     <v-content>
-      <Login v-if="isLogin"/>
-      <Feed v-else />
+      <div>{{typeof isLogin}}</div>
+      <div>{{isLogin ? 'true' : 'false'}}</div>
+      <Feed v-if="isLogin"/>
+      <Login v-else />
     </v-content>
   </v-app>
 </template>

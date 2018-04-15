@@ -12,8 +12,8 @@ export default {
   state,
 
   getters: {
-    isLogin () {
-      return state.userID !== ''
+    isLogin ({authResponse}) {
+      return authResponse.userID !== ''
     }
   },
   actions: {
