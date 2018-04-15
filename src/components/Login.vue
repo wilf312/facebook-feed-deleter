@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
-        <v-btn @click="click">Login</v-btn>
+        <v-btn @click="login">Login</v-btn>
       </v-layout>
     </v-slide-y-transition>
   </v-container>
@@ -15,10 +15,7 @@ export default {
   methods: {
     ...mapActions('facebook', [
       'login'
-    ]),
-    click () {
-      this.login()
-    }
+    ])
   }
 }
 </script>
