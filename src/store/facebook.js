@@ -1,4 +1,4 @@
-const state = {
+const initialState = {
   authResponse: {
     accessToken: '',
     expiresIn: 0,
@@ -9,7 +9,7 @@ const state = {
 export default {
   namespaced: true,
 
-  state,
+  state: JSON.parse(JSON.stringify(initialState)),
 
   getters: {
     isLogin ({authResponse}) {
@@ -26,6 +26,11 @@ export default {
           FB.login((response) => { commit('login', response) })
         }
       })
+    },
+    logout ({commit}) {
+      console.log('logout...')
+      FB.logout()
+      commit('reset')
     }
   },
   mutations: {
@@ -34,6 +39,9 @@ export default {
       console.log(state, authResponse)
 
       state.authResponse = {...authResponse}
+    },
+    reset (state) {
+      state.authResponse = {...initialState.authResponse}
     }
   }
 }
